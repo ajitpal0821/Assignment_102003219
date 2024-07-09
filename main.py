@@ -45,6 +45,7 @@ def topological_sort(graph):
     visited=[False]*len(graph)
     stack=[]
 
+    # dfs function for traversing graph
     def dfs(v):
         visited[v]=True
         if len(graph[v])==0:
@@ -61,14 +62,18 @@ def topological_sort(graph):
         if not visited[i]:
             dfs(i)
 
+    #returning reversed stack
     return stack[::-1]
 
     
 
 # Function to calculate longest path using topological sort
 def calculate_longest_path(graph, topo_order):
-    # Your implementation goes here
+    
+    # declare dist with minimum value as we need longest/maximum path
     dist =[-float('inf')]*len(graph)
+
+    #make start node distance as zero
     dist[topo_order[0]]=0
 
     for u in topo_order:
