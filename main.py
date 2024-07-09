@@ -41,7 +41,7 @@ def longest_path(graph: list) -> int:
 
 # Helper function to perform topological sort
 def topological_sort(graph):
-    # Your implementation goes here
+
     visited=[False]*len(graph)
     stack=[]
 
@@ -57,7 +57,7 @@ def topological_sort(graph):
         stack.append(v)
     
 
-
+    #checking for dis-connected components
     for i in range(len(graph)):
         if not visited[i]:
             dfs(i)
